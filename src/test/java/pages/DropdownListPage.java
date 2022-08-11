@@ -18,17 +18,18 @@ public class DropdownListPage extends BasePage {
         driver.get(URL + "dropdown");
     }
 
-    public int select(){
+    public int returnDropDownSize(){
         WebElement element = driver.findElement(By.id("dropdown"));
         Select select = new Select(element); // для выпадающего списка
         List<WebElement> options = select.getOptions();
         return options.size();
 
     }
-    public void выбираемЭлемент() {
+    public String selectOption1AndGetText() {
         WebElement element = driver.findElement(By.id("dropdown"));
         Select select = new Select(element);
         select.selectByIndex(1);
+        return select.getFirstSelectedOption().getText();
     }
 }
 
