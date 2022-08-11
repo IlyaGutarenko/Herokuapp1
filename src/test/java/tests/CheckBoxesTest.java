@@ -15,16 +15,17 @@ public class CheckBoxesTest extends BaseTest {
 
 
     @Test
-    public void checkBoxes1False () {
-       checkBoxesPage.openCheckBoxes();
-       checkBoxesPage.clickCheckboxByIndex0();
-        assertFalse(checkbox.get(0).isSelected());
+    public void checkBoxes1False() {
+        checkBoxesPage.openCheckBoxes();
+
+        assertFalse(checkBoxesPage.checkBoxByIndex0IsSelected());
     }
 
     @Test
     public void checkBoxes2True() {
         checkBoxesPage.openCheckBoxes();
         List<WebElement> checkbox = driver.findElements(By.cssSelector(checkBox));
+
         assertTrue(checkbox.get(1).isSelected());
     }
 
@@ -32,22 +33,22 @@ public class CheckBoxesTest extends BaseTest {
     public void clickCheckBox1AndEqualsTrue() {
         checkBoxesPage.openCheckBoxes();
         checkBoxesPage.clickCheckboxByIndex0();
-        assertTrue(checkbox.get(0).isSelected());
+        assertTrue(checkBoxesPage.checkBoxByIndex0IsSelected());
     }
 
     @Test
     public void clickCheckBox2AndEqualsFalse() {
         checkBoxesPage.openCheckBoxes();
         checkBoxesPage.clickCheckboxByIndex1();
-        assertFalse(checkbox.get(1).isSelected());
+        assertFalse(checkBoxesPage.checkBoxByIndex1IsSelected());
     }
 
     @Test
     public void clickCheckBox1AndEqualCheckBox1TrueAndCheckBoxTrue() {
         checkBoxesPage.openCheckBoxes();
         checkBoxesPage.clickCheckboxByIndex0();
-        assertTrue(checkbox.get(0).isSelected());
-        assertTrue(checkbox.get(1).isSelected());
+
+        assertTrue(checkBoxesPage.checkBoxByIndex1IsSelected() && checkBoxesPage.checkBoxByIndex0IsSelected());
     }
 
 }

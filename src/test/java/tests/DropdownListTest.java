@@ -16,13 +16,18 @@ public class DropdownListTest extends BaseTest {
 
 
     @Test
-    public void dropdownSelect1() {
+    public void dropDownSizeShouldBe3() {
         dropdownListPage.openDropdownList();
 
-        assertEquals(dropdownListPage.select(), 3);
+        assertEquals(dropdownListPage.returnDropDownSize(), 3);
+    }
 
-        dropdownListPage.выбираемЭлемент();
-        assertEquals(dropdownListPage.select().getFirstSelectedOption().getText(), "Option 1");
+    @Test
+    public void selectOption1(){
+        dropdownListPage.openDropdownList();
+        String textSelectedOption =  dropdownListPage.selectOption1AndGetText();
+
+        assertEquals(textSelectedOption, "Option 1" , "text is wrong");
     }
 
     @Test
