@@ -31,22 +31,24 @@ public class CheckBoxesTest extends BaseTest {
 
     @Test
     public void clickCheckBox1AndEqualsTrue() {
-        checkBoxesPage.openCheckBoxes();
-        checkBoxesPage.clickCheckboxByIndex0();
+        checkBoxesPage.openCheckBoxes()
+                .clickCheckboxByIndex0();
+
         assertTrue(checkBoxesPage.checkBoxByIndex0IsSelected());
     }
 
     @Test
     public void clickCheckBox2AndEqualsFalse() {
-        checkBoxesPage.openCheckBoxes();
-        checkBoxesPage.clickCheckboxByIndex1();
+        checkBoxesPage.openCheckBoxes()
+                .clickCheckboxByIndex1();
+
         assertFalse(checkBoxesPage.checkBoxByIndex1IsSelected());
     }
 
     @Test
     public void clickCheckBox1AndEqualCheckBox1TrueAndCheckBoxTrue() {
-        checkBoxesPage.openCheckBoxes();
-        checkBoxesPage.clickCheckboxByIndex0();
+        checkBoxesPage.openCheckBoxes()
+                .clickCheckboxByIndex0();
 
         assertTrue(checkBoxesPage.checkBoxByIndex1IsSelected() && checkBoxesPage.checkBoxByIndex0IsSelected());
     }

@@ -14,14 +14,16 @@ public class CheckBoxesPage extends BasePage {
         super(driver);
     }
 
-    public void openCheckBoxes(){
+    public CheckBoxesPage openCheckBoxes(){
         driver.get(URL + "checkboxes");
+        return this;
     }
 
 
-    public void clickCheckboxByIndex0 () {
+    public CheckBoxesPage clickCheckboxByIndex0 () {
         List<WebElement> checkbox = driver.findElements(By.cssSelector(checkBox));
         checkbox.get(0).click();
+        return this;
     }
     
     public boolean checkBoxByIndex0IsSelected(){
@@ -29,9 +31,10 @@ public class CheckBoxesPage extends BasePage {
         return checkbox.get(0).isSelected();
     }
 
-    public void clickCheckboxByIndex1 () {
+    public CheckBoxesPage clickCheckboxByIndex1 () {
         List<WebElement> checkbox = driver.findElements(By.cssSelector(checkBox));
         checkbox.get(1).click();
+        return this;
     }
 
     public boolean checkBoxByIndex1IsSelected(){
