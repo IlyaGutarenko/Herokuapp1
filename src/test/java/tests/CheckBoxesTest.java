@@ -10,10 +10,6 @@ import static org.testng.Assert.*;
 
 public class CheckBoxesTest extends BaseTest {
 
-
-    String checkBox = "[type='checkbox']";
-
-
     @Test
     public void checkBoxes1False() {
         checkBoxesPage.openCheckBoxes();
@@ -24,9 +20,8 @@ public class CheckBoxesTest extends BaseTest {
     @Test
     public void checkBoxes2True() {
         checkBoxesPage.openCheckBoxes();
-        List<WebElement> checkbox = driver.findElements(By.cssSelector(checkBox));
 
-        assertTrue(checkbox.get(1).isSelected());
+        assertTrue(checkBoxesPage.checkBoxByIndex1IsSelected());
     }
 
     @Test
