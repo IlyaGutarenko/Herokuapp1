@@ -24,7 +24,7 @@ public class DynamicControlsPage extends BasePage {
         return driver.findElement((MESSAGE_REMOVE)).getText();
     }
     public String messagesAfterClickingTheAddButton(){
-        return driver.findElement((MESSAGE_REMOVE)).getText();
+        return driver.findElement((MESSAGE_ADD)).getText();
     }
 
     public DynamicControlsPage clickButtonAdd(){
