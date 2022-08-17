@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeTest;
 import pages.AddRemoveElementPage;
 import pages.CheckBoxesPage;
 import pages.DropdownListPage;
+import pages.DynamicControlsPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,6 +21,7 @@ public class BaseTest {
     AddRemoveElementPage addRemoveElementPage;
     DropdownListPage dropdownListPage;
     CheckBoxesPage checkBoxesPage;
+    DynamicControlsPage dynamicControlsPage;
 
     @BeforeTest
     public void setUp(){
@@ -32,6 +34,7 @@ public class BaseTest {
         addRemoveElementPage = new AddRemoveElementPage(driver);
         dropdownListPage = new DropdownListPage(driver);
         checkBoxesPage = new CheckBoxesPage(driver);
+        dynamicControlsPage = new DynamicControlsPage(driver);
     }
 
     @AfterTest(alwaysRun = true)
