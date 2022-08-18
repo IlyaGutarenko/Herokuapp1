@@ -10,30 +10,28 @@ public class DynamicControlsPage extends BasePage {
     public static final By MESSAGE_REMOVE = By.id("message");
     public static final By MESSAGE_ADD = By.id("message");
 
-    public DynamicControlsPage openDynamicControls(){
+    public DynamicControlsPage openDynamicControls() {
         driver.get(URL + "dynamic_controls");
         return this;
     }
 
-    public DynamicControlsPage clickButtonRemove(){
+    public DynamicControlsPage clickButtonRemove() {
         driver.findElement((REMOVE_BUTTON)).click();
         return this;
     }
 
-    public String messageAfterClickingTheRemoveButton(){
+    public String messageAfterClickingTheRemoveButton() {
         return driver.findElement((MESSAGE_REMOVE)).getText();
     }
-    public String messagesAfterClickingTheAddButton(){
+
+    public String messagesAfterClickingTheAddButton() {
         return driver.findElement((MESSAGE_ADD)).getText();
     }
 
-    public DynamicControlsPage clickButtonAdd(){
+    public DynamicControlsPage clickButtonAdd() {
         driver.findElement((ADD_BUTTON)).click();
         return this;
     }
-
-
-
 
 
     public DynamicControlsPage(WebDriver driver) {
